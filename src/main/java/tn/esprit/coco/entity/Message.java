@@ -14,8 +14,8 @@ public class Message {
     private Date timestamp;
 
     @ManyToOne
-    @JoinColumn(name = "room_id")
-    private Room room;
+    @JoinColumn(name = "chatRoom_id")
+    private ChatRoom chatRoom;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

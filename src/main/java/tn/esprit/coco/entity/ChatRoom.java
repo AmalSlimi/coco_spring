@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class Room {
+public class ChatRoom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,10 +12,10 @@ public class Room {
 
     private String roomName;
 
-    @ManyToMany(mappedBy = "rooms")
+    @ManyToMany(mappedBy = "chatRooms")
     private List<User> users;
 
-    @OneToMany(mappedBy = "room")
+    @OneToMany(mappedBy = "chatRoom")
     private List<Message> messages;
 
 }

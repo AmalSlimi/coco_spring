@@ -24,9 +24,9 @@ public class User {
 
     @ManyToMany
     @JoinTable(
-            name = "user_room",
+            name = "user_chatRoom",
             joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "room_id"))
-    private List<Room> rooms;
+            inverseJoinColumns = @JoinColumn(name = "chatRoom_id"))
+    private List<ChatRoom> chatRooms;
 
 }
