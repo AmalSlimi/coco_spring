@@ -7,7 +7,6 @@ import java.util.Set;
 
 @ToString
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 @Entity
