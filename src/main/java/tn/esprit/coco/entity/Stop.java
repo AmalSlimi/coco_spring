@@ -1,5 +1,6 @@
 package tn.esprit.coco.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,7 @@ public class Stop implements Serializable {
     private String GPScoordinates;
 
     @OneToMany(mappedBy = "stop")
+    @JsonIgnore
     private List<TripStop> tripStops;
 
 
