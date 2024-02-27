@@ -20,8 +20,8 @@ public class Product {
     private TypeProduct typeProduct;
     private String Description;
     private int quantity;
-    private float weight;
-    private float price;
+    private String weight;
+    private int price;
 
     @ManyToOne
     SubCategoryProduct subcategory;

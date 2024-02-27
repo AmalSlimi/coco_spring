@@ -16,6 +16,7 @@ public class WishList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY  )
     private Long idList;
+    private String Wishname;
 
 
 
