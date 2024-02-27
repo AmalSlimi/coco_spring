@@ -58,9 +58,7 @@ public class User {
     private List<Ride> drives;
     @OneToMany(mappedBy = "passenger")
     private List<Reservation> reservations;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "security_id")
-    private Security security;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Favorite>favorites;
 //// syrine
