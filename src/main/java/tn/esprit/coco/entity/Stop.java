@@ -17,9 +17,9 @@ import java.util.List;
 public class Stop implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idStop;
     private String name;
-    private String GPScoordinates;
+    private String gpscoordinates;
 
     @OneToMany(mappedBy = "stop")
     @JsonIgnore
@@ -27,12 +27,6 @@ public class Stop implements Serializable {
 
 
 
-
-
-
-
-
-   
 
 
 }

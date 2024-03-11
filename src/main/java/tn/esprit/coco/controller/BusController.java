@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Bus")
+@CrossOrigin("*")
 @RequiredArgsConstructor
 public class BusController {
     private final IBusServices busServices;
@@ -16,6 +17,7 @@ public class BusController {
     public void addBus(@RequestBody Bus bus){
       busServices.addBus(bus);
     }
+    @CrossOrigin(origins = "*")
     @PutMapping("/update")
     public Bus  updateBus(@RequestBody Bus bus){
         return busServices.updateBus(bus);

@@ -18,7 +18,7 @@ import java.util.List;
 public class Trip implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idTrip;
 
     private String departureLocation;
     private String arrivalLocation;
@@ -28,13 +28,15 @@ public class Trip implements Serializable {
     @JsonIgnore
     private Bus assignedBus;
 
-    @OneToOne
+    /*@OneToOne
     @JsonIgnore
-    private BusPhoto tripPhoto;
+    private BusPhoto tripPhoto;*/
 
     @OneToMany(mappedBy = "trip")
     @JsonIgnore
     private List<TripStop> tripStops;
+
+
 
 
 

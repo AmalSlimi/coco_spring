@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Stop")
+@CrossOrigin("*")
 @RequiredArgsConstructor
 
 public class StopController {
