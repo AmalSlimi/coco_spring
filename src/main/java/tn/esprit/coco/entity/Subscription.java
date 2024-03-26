@@ -36,6 +36,7 @@ public class Subscription implements Serializable {
     private PaymentMethod subscriptionPaymentMethod;
 
     private String qrCodeData;
+     private  String qrCodeImageUrl;
 
     @OneToOne
     @JsonIgnore

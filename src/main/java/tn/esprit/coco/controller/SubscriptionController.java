@@ -4,9 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.coco.entity.Subscription;
+import tn.esprit.coco.entity.Trip;
 import tn.esprit.coco.serviceImp.SubscriptionServicesImpl;
 
+import java.util.List;
+
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/subscriptions")
 
 public class SubscriptionController {
@@ -21,6 +25,10 @@ public class SubscriptionController {
         } else {
             return ResponseEntity.badRequest().body("Failed to add subscription.");
         }
+    }
+    @GetMapping("/get-all")
+    public List<Subscription> getAllSubscription(){
+        return  subscriptionService.getAllSubscription();
     }
 
 }
