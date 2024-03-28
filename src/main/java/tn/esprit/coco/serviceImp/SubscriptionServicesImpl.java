@@ -35,6 +35,7 @@ public class SubscriptionServicesImpl implements ISubscriptionServices{
         subscription.setStatus(SubscriptionStatus.ACTIVE);
         subscription.setUser(user);
 
+
         Subscription savedSubscription = subscriptionRepository.save(subscription);
 
 
@@ -42,7 +43,27 @@ public class SubscriptionServicesImpl implements ISubscriptionServices{
 
 
         savedSubscription.setQrCodeData(qrCodeData);
-        savedSubscription.setSubscriptionPrice(savedSubscription.getRemainingTrips()*2);
+        int remainingTrips = savedSubscription.getRemainingTrips();
+
+// Récupérer le nombre de TripStop choisi par l'utilisateur
+        int selectedTripStops = savedSubscription.getTripStops(); // Supposons que cette propriété existe dans la classe Subscription
+
+// Déterminer le prix par TripStop en fonction du choix de l'utilisateur
+        double pricePerTripStop;
+        if (selectedTripStops <= 3) {
+            pricePerTripStop = 1.0;
+        } else if (selectedTripStops <= 5) {
+            pricePerTripStop = 1.5;
+        } else {
+            pricePerTripStop = 2.0;
+        }
+
+// Calculer le prix total
+        double totalSubscriptionPrice = remainingTrips * pricePerTripStop;
+
+// Définir le prix de l'abonnement
+        savedSubscription.setSubscriptionPrice(totalSubscriptionPrice);
+
 
 
         return subscriptionRepository.save(savedSubscription);

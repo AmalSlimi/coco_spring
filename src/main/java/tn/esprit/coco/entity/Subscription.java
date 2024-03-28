@@ -29,9 +29,10 @@ public class Subscription implements Serializable {
     @Enumerated(value = EnumType.STRING)
     private SubscriptionStatus status;
 
-    private float subscriptionPrice;
+    private double subscriptionPrice;
 
     private int remainingTrips;
+    private int TripStops ;
 
     private PaymentMethod subscriptionPaymentMethod;
 
